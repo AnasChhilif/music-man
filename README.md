@@ -6,9 +6,9 @@ MusicMan is re-incarnation of my first ever somewhat solid project, musickid, a 
 because rust is cool
 ## Progression
 - [x] Display Hello world.
-- [] Play audio.
-- [] Parse mp3 for the data and print it to shell (title, artist, etc).
-- [] Display an empty window.
-- [] Fill window with the parsed info and album art.
-- [] Add ability to play multiple audio files (one after the other).
-- [] Integrate the vim bindings.
+- [x] Play audio.
+- [ ] Parse mp3 for the data and print it to shell (title, artist, etc).
+- [ ] Display an empty window.
+- [ ] Fill window with the parsed info and album art.
+- [ ] Add ability to play multiple audio files (one after the other).
+- [ ] Integrate the vim bindings.
