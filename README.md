@@ -8,7 +8,7 @@ because rust is cool
 - [x] Display Hello world.
 - [x] Play audio.
 - [x] Parse mp3 for the data and print it to shell (title, artist, etc).
-- [ ] Display an empty window.
+- [x] Display an empty window.
 - [ ] Fill window with the parsed info and album art.
 - [ ] Add ability to play multiple audio files (one after the other).
 - [ ] Integrate the vim bindings.
