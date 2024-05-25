@@ -6,34 +6,23 @@ mod infoparser;
 
 slint::slint! {
     import { Button, Slider } from "std-widgets.slint";
-export component MainWindow inherits Window {
-        Text {
-            text: "hello world";
-            color: green;
-        }
-        Button {
-            width: 127px;
-            height: 70px;
-            text: "l7ma9 o lhrba";
-            x: 122px;
-            y: 48.8217px;
-        }
-        Slider {
-            height: 71px;
-            minimum: 0;
-            value: 69;
-            maximum: 100;
-            x: 106px;
-            y: 221px;
-            width: 210px;
-        }
+    export component MainWindow inherits Window {
+            in-out property<string> Title : "No Title";
+            in-out property<string> Artist : "No Artist";
+            in-out property<string> Album : "No Album";
+        width: 600px;
+        height: 400px;
+         Text { text: "Title: " + root.Title;
+              color: green;
+             x: 10px; y: 40px;}
+         Text { text: "Artist: " + root.Artist; color: green;
+             x: 10px; y: 60px;}
+         Text { text: "Album: " + root.Album; color: green;
+             x: 10px; y: 80px;}
     }
 }
 
 fn main() {
-    println!("Hello, world!");
-    MainWindow::new().unwrap().run().unwrap();
-
     let (_stream, stream_handle) = OutputStream::try_default().unwrap();
 
     // Load a sound from a file, using a path relative to Cargo.toml
@@ -44,6 +33,7 @@ fn main() {
 
     // Play the sound directly on the device
     let _ = stream_handle.play_raw(source.convert_samples());
+    let _main_window = MainWindow::new().unwrap().run().unwrap();
 
     let mut info = infoparser::Info::new();
 
@@ -55,5 +45,5 @@ fn main() {
 
     // The sound plays in a separate audio thread,
     // so we need to keep the main thread alive while it's playing.
-    std::thread::sleep(std::time::Duration::from_secs(5));
+    // std::thread::sleep(std::time::Duration::from_secs(5));
 }
